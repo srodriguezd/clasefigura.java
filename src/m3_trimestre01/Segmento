@@ -1,0 +1,55 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package practica_bl;
+
+import m3_trimestre01.*;
+
+/**
+ *
+ * @author sara
+ */
+public class Segmento extends Punto implements MetodosFigura2{
+    
+   protected Punto origen;                  
+   private Punto finaloso;
+
+    public Segmento(Punto origen, Punto finaloso, double x, double y) {
+        super(x, y);
+        this.origen = origen;
+        this.finaloso = finaloso;
+    }
+
+    public Punto getOrigen() {
+        return origen;
+    }
+
+    public void setOrigen(Punto origen) {
+        this.origen = origen;
+    }
+
+    public Punto getFinaloso() {
+        return finaloso;
+    }
+
+    public void setFinaloso(Punto finaloso) {
+        this.finaloso = finaloso;
+    }  
+    
+   @Override
+     public void Desplazar (double x, double y) 
+    { 
+        this.origen.Desplazar(x, y);
+        this.finaloso.Desplazar(x, y);
+    } 
+
+    @Override
+    public String toString() {
+        return "Segmento{" + "origen=" + origen + ", finaloso=" + finaloso + '}';
+    }
+
+   
+    
+}
