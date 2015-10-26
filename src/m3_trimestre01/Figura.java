@@ -10,49 +10,60 @@ package m3_trimestre01;
  * @author sara
  */
 
-public abstract class Figura {
-    protected Punto origen;
-    private static int numFiguras;
+public abstract class Figura2 implements MetodosFigura2{  
     
-    
-    public void Figura(Punto origen){
-        this.origen=origen;
-        Figura.numFiguras++;
+    protected Punto2 origen;
+    private static double NumFigura=0;
+
+    public Figura2(Punto2 origen) {
+        this.origen = origen;
+        Figura2.NumFigura++;
     }
     
-    public Punto getOrigen(){
-        return.origen;
-        
+    public Figura2(double x, double y){
+        this.origen = new Punto2();
+        Figura2.NumFigura++;
     }
     
-    public void setOrigen(Punto origen){
-        this.origen=origen;
-        
+
+    public Punto2 getOrigen() {
+        return origen;
+    }
+
+    public void setOrigen(Punto2 origen) {
+        this.origen = origen;
+    }
+
+    public static double getNumFigura() {
+        return NumFigura;
+    }
+
+    public static void setNumFigura(double NumFigura) {
+        Figura2.NumFigura = NumFigura;
+    }
+
+    @Override
+    public String toString() {
+        return "Figura2{" + "origen=" + origen + '}';
     }
     
-    public void desplazar(int dx, int dy){
-        this.origen.desplazar(dx, dy);
+    public void Desplazar(double x, double y){
+        this.origen.Desplazar(x, y);
+    
+    }
+    
+    public double Distancia(Figura2 f) {
+      return this.origen.Distancia(f.getOrigen());
     }
     
     @Override
-    public String toString(){
-        return "origen = " + this.origen.toString();
-    }
-    
-    public static int numFiguras(){
-        return Figura.numFiguras;
-       
-    }
-    
-    public double distancia(Figura f) {
-        return this.origen.distancia(f.getOrigen());
-    }
-    
-    protected abstract double area();
-    protected abstract double perímetro();
-    protected abstract double escalar(double n);
-    
+    public abstract double Area();
+    @Override
+    public abstract double Perímetro();
+    @Override
+    public abstract void Escalar(double n);
     
 
+    
     
 }
