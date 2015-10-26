@@ -10,11 +10,11 @@ package m3_trimestre01;
  *
  * @author sara
  */
-public class Rectángulo extends Cuadrado{
+public class Rectangulo2 extends Cuadrado2 implements MetodosFigura2{
     private double alto;
 
-    public Rectángulo(double alto, double ancho, Punto origen) {
-        super.Cuadrado(origen,ancho);
+    public Rectangulo2(double alto, double ancho, Punto2 origen) {
+        super(ancho, origen);
         this.alto = alto;
     }
 
@@ -25,27 +25,29 @@ public class Rectángulo extends Cuadrado{
     public void setAlto(double alto) {
         this.alto = alto;
     }
-
+    
     @Override
-    protected void Escalar(double r) {
-        super.Escalar(r); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    protected double Perímetro() {
-        return this.ancho * 2 + this.alto * 2;
-        this.alto *= n;
-
-    @Override
-    protected double Area() {
+    public double Area() {
         return this.ancho * this.alto;
     }
 
     @Override
+    public double Perímetro() {
+        double resultado = (this.ancho * 2) + (this.alto * 2);
+        return resultado;
+    }
+
+    @Override
+    public void Escalar(double n) {
+         this.ancho = this.ancho + n;
+         this.alto = this.alto + n;
+    }
+
+    @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return "Rectangulo2{" + "alto=" + alto + '}';
     }
     
     
     
-}    
+}
