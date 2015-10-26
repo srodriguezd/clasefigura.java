@@ -9,7 +9,7 @@ package m3_trimestre01;
  *
  * @author sara
  */
-public class Punto2 {
+    public class Punto2 {
     
        private double x;
        private double y;
@@ -17,10 +17,6 @@ public class Punto2 {
     public Punto2(double x, double y) {
         this.x = x;
         this.y = y;
-    }
-
-    Punto2() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public double getX() {
@@ -56,9 +52,9 @@ public class Punto2 {
     
     }
 
-    double Distancia(Punto2 origen) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
     
     
 }
+
+    
