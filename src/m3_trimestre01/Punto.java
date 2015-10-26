@@ -9,59 +9,56 @@ package m3_trimestre01;
  *
  * @author sara
  */
-public class Punto {
-   
-   // Declaración de atributos                     
-   private double x; 
-   private double y; 
-   
-   // Constructor 
-   public Punto(double x, double y) 
- { 
-       this.x = x; 
-       this.y = y;         
- } 
-   
-// Definición de métodos  
-   public double getX () 
- { 
-    return x; 
- } 
-   public double getY() 
- { 
-    return y; 
- } 
-
-   public void setX(double x) {
-    this.x = x;
-   }
-
-   public void setY(double y) {
-        this.y = y;
-   }
+public class Punto2 {
     
-   @Override //sobreescribe el método toString para que escriba lo que yo quiera
-   public String toString(){
-     return "("+this.x+","+this.y+")";           
-   }
+       private double x;
+       private double y;
 
-   public void Desplazar (double x, double y) 
-   { 
-      this.x = this.x + x;
-      this.y = this.y + y;
-   }  
-   
-   public double Distancia (Punto p2) 
-   { 
-      double resultado = Math.sqrt(Math.pow(p2.getX()-this.x,2) + Math.pow(p2.getY()-this.y,2));
-      return resultado;
-      
-      //int dx = this.x - p.GetX();
-      //igual con y
-      // return Math.sqrt(Math.pow(dx2) + Math.pow(dy,2))
-      //luego lo de overrrite lo ha hecho automatico;
+    public Punto2(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    Punto2() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "Punto2{" + "x=" + x + ", y=" + y + '}';
+    }
+
+    public void Desplazar(double x2, double y2){
+       this.x = this.x + x2;
+       this.y = this.y + y2;
+    
+    }  
      
-   }
-  
+    public double Distancia(double x2, double y2){
+        double resultado = Math.sqrt((Math.pow((this.x - x2), 2)) + (Math.pow((this.y - y2), 2)));
+        return resultado;
+    
+    }
+
+    double Distancia(Punto2 origen) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
 }
