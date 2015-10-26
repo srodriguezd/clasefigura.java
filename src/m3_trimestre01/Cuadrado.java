@@ -9,18 +9,13 @@ package m3_trimestre01;
  *
  * @author sara
  */
-public class Cuadrado extends Figura { //por heredar
-    // Declaración de atributos 
-   protected double ancho;
-   
-   // Constructor 
-   public void Cuadrado(double ancho, Punto origen)
-    { 
-       this.ancho = ancho; 
-       super.Figura(origen);
-    } 
+public class Cuadrado2 extends Figura2 implements MetodosFigura2{
+    protected double ancho;
 
-// Definición de métodos  
+    public Cuadrado2(double ancho, Punto2 origen) {
+        super(origen);
+        this.ancho = ancho;
+    }
 
     public double getAncho() {
         return ancho;
@@ -30,32 +25,29 @@ public class Cuadrado extends Figura { //por heredar
         this.ancho = ancho;
     }
 
-    @Override //generado automaticamente y luego modificado
+    @Override
     public String toString() {
-        return "Cuadrado{" + super.toString()  +"ancho=" + this.ancho + '}';
+        return "Cuadrado2{" + "origen" + this.origen + "ancho" + this.ancho + '}';
+    }    
+
+    @Override
+    public double Area() {
+        double resultado = this.ancho * this.ancho;
+        return resultado;
     }
-    
+
     @Override
-    protected double Area() 
-   { 
-        double resultado = (this.ancho*this.ancho);
+    public double Perímetro() {
+        double resultado = this.ancho * 4;
         return resultado;
-   }  
-    
+    }
+
     @Override
-    protected double Perímetro() 
-   { 
-        double resultado = (this.ancho * 4 ); //Esto si fuera equilátero...
-        return resultado;
-   }  
+    public void Escalar(double n) {
+        this.ancho = this.ancho + n;
+
+    }
+
     
-    @Override
-    protected void Escalar(double r) 
-   { 
-        this.setAncho((this.ancho + this.ancho) * (r/100));
-        
-        
-   } 
     
 }
-
